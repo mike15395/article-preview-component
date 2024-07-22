@@ -1,0 +1,138 @@
+@import url('https://fonts.google.com/specimen/Manrope');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+--Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+--Grayish-Blue: hsl(212, 23%, 69%);
+--Light-Grayish-Blue: hsl(210, 46%, 95%);
+}
+
+body{
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    background-color: var(--Light-Grayish-Blue);
+    font-family: "Manrope",sans-serif;
+}
+
+main{
+    height: 280px;
+    width:730px;
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    grid-template-areas: "image-section text-section";
+    gap:10px;
+    background-color: white;
+    border-radius: 10px;
+    
+}
+
+h2{
+    
+    color:var(--Very-Dark-Grayish-Blue);
+}
+
+.name{
+    color:var(--Very-Dark-Grayish-Blue);
+    font-weight: bold;
+}
+
+
+.paragraph,.date{
+    color: var(--Grayish-Blue);
+    
+    font-size: 13px;
+}
+
+.drawer-image{
+    width:285px;
+    height: 280px;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.last-text-section{
+    display: flex;
+    width:100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.avatar-michelle{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.text-section{
+    display: flex;
+    flex-direction: column;
+    gap:25px;
+    padding: 30px;
+}
+
+.avatar-section{
+    display: flex;
+    gap:20px;
+}
+/* .name-date{
+    display: flex;
+    flex-direction: column;
+} */
+
+.share-icon{
+    width: 32px;
+    height: 32px;
+    background-color: var(--Light-Grayish-Blue);
+    border-radius: 50%;
+    padding: 8px;
+    cursor: pointer;
+}
+
+
+/* css for tool tip*/
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+   
+  }
+  
+  .tooltip .tool-tip-text {
+    visibility: hidden;
+    width: 248px;
+    height: 67px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -120px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .tooltip .tool-tip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+  .tooltip:hover .tool-tip-text {
+    visibility: visible;
+    opacity: 1;
+  }
