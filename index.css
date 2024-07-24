@@ -11,30 +11,39 @@
 --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
 --Grayish-Blue: hsl(212, 23%, 69%);
 --Light-Grayish-Blue: hsl(210, 46%, 95%);
+
 }
 
 body{
-    display: grid;
-    place-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100vh;
+    width: 100vw;
     background-color: var(--Light-Grayish-Blue);
     font-family: "Manrope",sans-serif;
 }
 
 main{
-    height: 280px;
-    width:730px;
+    height: 17.5rem;
+    max-width: 46rem;
+    max-height: 18rem;;
     display: grid;
     grid-template-columns: repeat(2,auto);
-    grid-template-areas: "image-section text-section";
-    gap:10px;
-    background-color: white;
+    grid-template-areas: "image text";
+    /* gap:20px; */
+    /* background-color: white; */
     border-radius: 10px;
     
 }
 
-h2{
-    
+.image-section{
+    grid-area: image;
+}
+
+.main-heading{
+    font-size: 24px;
+    line-height: 1.75rem;
     color:var(--Very-Dark-Grayish-Blue);
 }
 
@@ -51,9 +60,10 @@ h2{
 }
 
 .drawer-image{
-    width:285px;
-    height: 280px;
+    width:17.81rem;
+    height: 17.5rem;
     border-radius: 10px 0px 0px 10px;
+    
 }
 
 .last-text-section{
@@ -70,20 +80,23 @@ h2{
 }
 
 .text-section{
+    grid-area:text;
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap:25px;
+     justify-content: space-evenly;
     padding: 30px;
+    background-color: white;
+    border-radius: 0px 10px 10px 0px;
+   
 }
 
 .avatar-section{
     display: flex;
     gap:20px;
 }
-/* .name-date{
-    display: flex;
-    flex-direction: column;
-} */
+
 
 .share-icon{
     width: 32px;
@@ -95,44 +108,50 @@ h2{
 }
 
 
-/* css for tool tip*/
+@media all and (max-width:820px) {
+   body{
+    
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  padding: 10px;
+   }
 
-.tooltip {
-    position: relative;
-    display: inline-block;
-   
-  }
-  
-  .tooltip .tool-tip-text {
-    visibility: hidden;
-    width: 248px;
-    height: 67px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -120px;
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-  
-  .tooltip .tool-tip-text::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
-  }
-  
-  .tooltip:hover .tool-tip-text {
-    visibility: visible;
-    opacity: 1;
-  }
+    
+    main{
+        display: grid;
+        grid-template-columns: repeat(1,auto);
+        grid-template-areas: "image-area"
+        "text-area";
+        height: 32rem;
+        width:20.43rem;
+        margin-bottom: 12rem;
+
+    }
+    .image-section{
+        grid-area: image-area;
+    }
+    .text-section{
+        grid-area: text-area ;
+    }
+    .drawer-image{
+        width:20.43rem;
+        height: 12.5rem;
+        border-radius: 10px 10px 0px 0px;
+    }
+    .main-heading{
+        font-size: 16px;
+        color: var(--Very-Dark-Grayish-Blue);
+        line-height: 1.5rem;
+        font-weight: 500;
+    }
+
+    .text-section{
+        gap:10px;
+        border-radius: 0px 0px 10px 10px;
+    }
+    
+}
+
+
