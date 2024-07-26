@@ -101,12 +101,76 @@ main{
 .share-icon{
     width: 32px;
     height: 32px;
-    background-color: var(--Light-Grayish-Blue);
+    background: url('./images/icon-share.svg') no-repeat,var(--Light-Grayish-Blue) ;
+    background-position: center;
     border-radius: 50%;
     padding: 8px;
     cursor: pointer;
+    
 }
 
+.share-icon:hover{
+    
+   background: url('./images/share-icon-white.png') no-repeat ,#6E8098;
+   background-position: center;
+   display: inline-block;
+   width: 32px;
+   height: 32px;
+   border-radius: 50%;
+
+}
+
+.share-icon:hover #tooltip{
+    visibility: visible;
+}
+
+
+#tooltip{
+    background-color: #48556A;
+    width: 15.5rem;
+    height: 4.1875rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:16px;
+    padding-top:18px;
+    padding-bottom: 18px;
+    padding-left: 36px;
+    padding-right: 36px;
+    border-radius: 10px;
+   
+    position: relative;
+    bottom: 560%; /* Position above the share icon */
+    left: 50%;
+    transform: translateX(-50%);
+     z-index: 1; 
+    transition: opacity 0.3s;
+    /* display: none; */
+   visibility: hidden;    
+   
+}
+
+
+.share-tooltip{
+    color: #9DAEC2;
+    letter-spacing: 5px;
+}
+
+.down-arrow{
+    position: absolute;
+    top: 100%; /* Position the arrow at the bottom of the tooltip */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #48556A;
+}
+
+.mobile-footer{
+    display: none;
+}
 
 @media all and (max-width:820px) {
    body{
@@ -134,6 +198,7 @@ main{
     }
     .text-section{
         grid-area: text-area ;
+        
     }
     .drawer-image{
         width:20.43rem;
@@ -151,6 +216,49 @@ main{
         gap:10px;
         border-radius: 0px 0px 10px 10px;
     }
+
+    #tooltip{
+        display: none;
+    }
+
+    .share-icon:hover .mobile-footer{
+        visibility: visible;
+    }
+
+    /* .share-icon:hover .last-text-section{
+       visibility: hidden;
+    } */
+
+    .mobile-footer{
+   
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #48556A;
+        padding-top:22px;
+        padding-bottom: 15px;
+        padding-left: 32px;
+        padding-right: 32px;
+        visibility: hidden;        
+    }
+
+    .mobile-footer .icons{
+        display: flex;
+        gap: 16px;
+        align-items: center;
+    }
+
+    .mobile-footer .share-icon-mobile{
+        background: url('./images/share-icon-white.png') no-repeat ,#6E8098;
+        background-position: center;
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+    }
+    /* .last-text-section{
+        display: none;
+    } */
     
 }
 
