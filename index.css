@@ -118,8 +118,8 @@ main{
    height: 32px;
    border-radius: 50%;
 
-}
-
+} 
+ 
 .share-icon:hover #tooltip{
     visibility: visible;
 }
@@ -221,15 +221,9 @@ main{
         display: none;
     }
 
-    .share-icon:hover .mobile-footer{
-        visibility: visible;
-    }
-
-    /* .share-icon:hover .last-text-section{
-       visibility: hidden;
-    } */
-
-    .mobile-footer{
+ 
+    
+    #mobile-footer{
    
         display: flex;
         justify-content: space-between;
@@ -239,16 +233,17 @@ main{
         padding-bottom: 15px;
         padding-left: 32px;
         padding-right: 32px;
-        visibility: hidden;        
+       
+                 
     }
 
-    .mobile-footer .icons{
+    #mobile-footer .icons{
         display: flex;
         gap: 16px;
         align-items: center;
     }
 
-    .mobile-footer .share-icon-mobile{
+    #mobile-footer .share-icon-mobile{
         background: url('./images/share-icon-white.png') no-repeat ,#6E8098;
         background-position: center;
         display: inline-block;
@@ -259,6 +254,9 @@ main{
     /* .last-text-section{
         display: none;
     } */
+
+
+
     
 }
 
