@@ -1,26 +1,30 @@
-// const shareButton = document.getElementById("share-button");
-// console.log(shareButton.style.display);
-// let shareTooltip = document.getElementById("tooltip");
-// shareButton.addEventListener("click", function () {
-//   console.log(shareTooltip.style.display);
-//   shareTooltip.style.display === "none" || shareTooltip.style.display === ""
-//     ? (shareTooltip.style.display = "flex")
-//     : (shareTooltip.style.display = "none");
-// });
+function updateView() {
+  let isMobile = window.screen.width <= 820;
+  console.log(window.screen.width, "width");
+  console.log(window.screen.height, "height");
+  console.log(isMobile, "is mobile");
+  if (isMobile) {
+    const mobileFooter = document.getElementById("mobile-footer");
+    const lastTextSection = document.getElementById("last-text-section");
 
-// let isMobile = window.screen.width <= 820;
-// console.log(window.screen.width, "width");
-// console.log(window.screen.height, "height");
-// console.log(isMobile, "is mobile");
-// if (isMobile) {
-//   // Mobile-specific JavaScript code
-//   let mobileFooter = document.getElementById("mobile-footer");
-//   let shareButton = document.getElementById("share-button");
-//   let lastSection = document.getElementById("last-text-section");
-//   let mobileShareButton = document.getElementById("mobile-share-button");
+    const shareButtonMobile = document.getElementById("share-button-mobile");
+    const shareButtonLast = document.getElementById("share-button-last");
 
-//   // mobileFooter.style.display = "none";
-//   shareButton.addEventListener("click", function () {
-//     lastSection.className = "mobile-footer";
-//   });
-// }
+    function viewMobileFooter() {
+      console.log("view mobile footer");
+      lastTextSection.style.display = "none";
+      mobileFooter.style.display = "flex";
+    }
+
+    function viewLastTextSection() {
+      console.log("view last text section");
+      mobileFooter.style.display = "none";
+      lastTextSection.style.display = "flex";
+    }
+
+    shareButtonMobile.addEventListener("click", () => viewLastTextSection());
+    shareButtonLast.addEventListener("click", () => viewMobileFooter());
+  }
+}
+
+window.addEventListener("resize", updateView);
